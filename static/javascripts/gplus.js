@@ -5,7 +5,11 @@
     .module('gplus', [
     	'gplus.config',
       	'gplus.routes',
-      	'gplus.authentication'
+      	'gplus.authentication',
+      	'gplus.layout',
+      	'gplus.posts',
+      	'gplus.utils',
+      	'gplus.profiles'
     ]);
 
   angular
