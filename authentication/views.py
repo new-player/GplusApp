@@ -41,6 +41,7 @@ class AccountViewSet(viewsets.ModelViewSet):
         
 class LoginView(views.APIView):
     def post(self, request, format=None):
+        print "hala"
         data = json.loads(request.body)
 
         email = data.get('email', None)

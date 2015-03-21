@@ -14,6 +14,7 @@
 
     vm.destroy = destroy;
     vm.update = update;
+    vm.change=change;
 
     activate();
 
@@ -47,7 +48,7 @@
 
     function destroy() {
       Profile.destroy(vm.profile.username).then(profileSuccessFn, profileErrorFn);
-      alert("hala");
+      
 
       function profileSuccessFn(data, status, headers, config) {
     	  alert("halaSuccess");
@@ -62,6 +63,20 @@
         Snackbar.error(data.error);
       }
     }
+    
+    function change() {
+    	console.log("inside change of profile-settings-controller");
+    	Profile.updatePic().then(profileSuccessFn, profileErrorFn);
+        function profileSuccessFn(data, status, headers, config) {
+          Snackbar.show('Your profile avatar has been updated.');
+          window.location = '/api/avatar/change/'
+        }
+
+        function profileErrorFn(data, status, headers, config) {
+          Snackbar.error(data.error);
+        }
+      }
+    
 
     function update() {
       Profile.update(vm.profile).then(profileSuccessFn, profileErrorFn);

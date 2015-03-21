@@ -11,7 +11,8 @@
     var Profile = {
       destroy: destroy,
       get: get,
-      update: update
+      update: update,
+      updatePic: updatePic
     };
 
     return Profile;
@@ -26,6 +27,11 @@
 
     function update(profile) {
       return $http.put('/api/v1/accounts/' + profile.username + '/', profile);
+    }
+
+    function updatePic(){
+    	console.log("Inside updatePic");
+        return $http.get('/api/avatar/change/');
     }
   }
 })();

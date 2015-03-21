@@ -9,6 +9,8 @@
 
 
   function config($routeProvider) {
+	  console.log("inside config");
+	  
 	  $routeProvider.when('/', {
 		  controller: 'IndexController',
 		  controllerAs: 'vm',

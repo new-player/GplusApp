@@ -45,7 +45,7 @@ class Account(AbstractBaseUser):
     
     # To be done later. Install Pillow to include Images. Use pip install pillow.
     # website = models.URLField(blank=True)
-    avatar = models.ImageField(upload_to='profile_images', blank=True)
+    # avatar = models.ImageField(upload_to='profile_images', blank=True)
 
     objects = AccountManager()
     
